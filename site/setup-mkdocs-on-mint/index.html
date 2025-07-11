@@ -253,7 +253,7 @@
   
   
   <span class="md-ellipsis">
-    Installing Linux Mint
+    Installing Linux Mint (Step-by-Step Guide for Beginners)
     
   </span>
   
@@ -580,6 +580,7 @@
 <li><a href="https://code.visualstudio.com/download">Visual Studio Code</a> </li>
 <li><a href="https://www.python.org/downloads/">Python</a> </li>
 </ul>
+<hr />
 <h2 id="1-install-git-and-github-cli">1. Install git and github cli</h2>
 <ul>
 <li>Open terminal and input:
@@ -588,10 +589,11 @@
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>gh<span class="w"> </span>auth<span class="w"> </span>login
 </span></code></pre></div></li>
 </ul>
+<hr />
 <h2 id="2-set-up-a-new-mkdocs-project">2. Set up a new mkdocs project</h2>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mkdocs<span class="w"> </span>new<span class="w"> </span>my-new-docs<span class="w">  </span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">cd</span><span class="w"> </span>my-new-docs
 </span></code></pre></div>
+<hr />
 <h2 id="3-create-a-virtual-environment">3. Create a virtual environment</h2>
 <ol>
 <li>Open Visual Studio Code</li>
@@ -601,12 +603,15 @@
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">source</span><span class="w"> </span>venv/bin/activate
 </span></code></pre></div></li>
 </ol>
+<hr />
 <h2 id="4-install-pip">4. Install pip</h2>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-pip
 </span></code></pre></div>
+<hr />
 <h2 id="5-install-mkdocs-and-the-material-theme">5. Install mkdocs and the material theme</h2>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs<span class="w"> </span>mkdocs-material
 </span></code></pre></div>
+<hr />
 <h2 id="6-customize-your-mkdocsyml">6. Customize your <code>mkdocs.yml</code></h2>
 <ul>
 <li>Set attributes <code>site_name</code>, theme, palette, font, favicon, and more</li>
@@ -616,9 +621,11 @@
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.mark</span>
 </span></code></pre></div>
+<hr />
 <h2 id="7-preview-your-site-locally">7. Preview your site locally</h2>
 <p><code>mkdocs serve</code><br />
 * View in browser at: http://127.0.0.1:8000</p>
+<hr />
 <h2 id="8-push-to-github-and-deploy">8. Push to github and deploy</h2>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>init
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/&lt;your-username&gt;/my-new-docs.git
@@ -629,6 +636,7 @@
 </span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
 </span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>mkdocs<span class="w"> </span>gh-deploy
 </span></code></pre></div>
+<hr />
 <h2 id="9-enable-github-pages">9. Enable github pages</h2>
 <ol>
 <li>Go to repo ⚙ Settings &rarr; Pages</li>
@@ -644,7 +652,7 @@
 </div>
 <p>Your site should be available at:<br />
 <code>https://&lt;your-username&gt;.github.io/my-new-docs/</code></p>
-<p><br><br></p>
+<p><br></p>
 <details class="warning">
 <summary>Don't Forget to Deploy</summary>
 <ul>
@@ -695,7 +703,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../install-mint/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installing Linux Mint">
+          <a href="../install-mint/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installing Linux Mint (Step-by-Step Guide for Beginners)">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -705,7 +713,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Installing Linux Mint
+                Installing Linux Mint (Step-by-Step Guide for Beginners)
               </div>
             </div>
           </a>

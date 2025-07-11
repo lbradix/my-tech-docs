@@ -20,7 +20,7 @@
     
     
       
-        <title>Installing Linux Mint - Docs by LB</title>
+        <title>Installing Linux Mint (Step-by-Step Guide for Beginners) - Docs by LB</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installing-linux-mint" class="md-skip">
+        <a href="#installing-linux-mint-step-by-step-guide-for-beginners" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installing Linux Mint
+              Installing Linux Mint (Step-by-Step Guide for Beginners)
             
           </span>
         </div>
@@ -264,7 +264,7 @@
   
   
   <span class="md-ellipsis">
-    Installing Linux Mint
+    Installing Linux Mint (Step-by-Step Guide for Beginners)
     
   </span>
   
@@ -277,7 +277,7 @@
   
   
   <span class="md-ellipsis">
-    Installing Linux Mint
+    Installing Linux Mint (Step-by-Step Guide for Beginners)
     
   </span>
   
@@ -348,6 +348,24 @@
   <a href="#5-first-boot-updates" class="md-nav__link">
     <span class="md-ellipsis">
       5. First Boot &amp; Updates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-thoughts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Thoughts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Resources
     </span>
   </a>
   
@@ -463,6 +481,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#final-thoughts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Thoughts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Resources
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -479,8 +515,10 @@
 
 
 
-<h1 id="installing-linux-mint">Installing Linux Mint</h1>
-<p>Linux Mint is a beginner-friendly, full-featured Linux distribution that's perfect for new and experienced users alike. This guide walks you through installing Linux Mint on your machine—whether you’re replacing an existing OS or setting up dual-boot.</p>
+<h1 id="installing-linux-mint-step-by-step-guide-for-beginners">Installing Linux Mint (Step-by-Step Guide for Beginners)</h1>
+<blockquote>
+<p>Linux Mint is a beginner-friendly, full-featured Linux distribution that's perfect for new and experienced users alike. Providing an easy transition from the Windows environment, this is an excellent first choice. This guide  walks you through installing Linux Mint on your machine, whether you’re replacing an existing OS or setting up dual-boot.</p>
+</blockquote>
 <hr />
 <h2 id="prerequisites">📝 Prerequisites</h2>
 <ul>
@@ -494,29 +532,74 @@
 <ol>
 <li>Visit the official <a href="https://linuxmint.com/download.php">Linux Mint website</a>.</li>
 <li>Choose a desktop environment (Cinnamon is the default).</li>
-<li>Download the latest ISO file.</li>
+<li>
+<p>Download the latest ISO file.</p>
+<div class="admonition tip">
+<p class="admonition-title">Choose the closest mirror to your location for faster download speeds.</p>
+</div>
+</li>
 </ol>
-<blockquote>
-<p>💡 <em>Choose the closest mirror to your location for faster download speeds.</em></p>
-</blockquote>
 <hr />
 <h2 id="2-create-a-bootable-usb">2. Create a Bootable USB</h2>
 <p>Use a tool like:</p>
 <ul>
-<li><strong>Windows:</strong> <a href="https://rufus.ie">Rufus</a></li>
-<li><strong>macOS:</strong> <a href="https://www.balena.io/etcher/">BalenaEtcher</a></li>
+<li><strong>Windows:</strong> <a href="https://rufus.ie">Rufus</a>, <a href="https://www.balena.io/etcher/">balenaEtcher</a></li>
+<li><strong>macOS:</strong> <a href="https://www.balena.io/etcher/">balenaEtcher</a></li>
 <li><strong>Linux:</strong> Use the <code>dd</code> command or USB Creator tool</li>
 </ul>
-<p>Steps (example using Rufus):
-1. Insert USB drive.
-2. Open Rufus and select your downloaded ISO.
-3. Click <strong>Start</strong> and wait for the process to complete.</p>
+<details class="note">
+<summary>Steps using Rufus</summary>
+<ol>
+<li>Insert USB drive.</li>
+<li>Open Rufus and select your downloaded ISO.</li>
+<li>Click <strong>Start</strong> and wait for the process to complete.</li>
+</ol>
+</details>
+<details class="note">
+<summary>Steps using balenaEtcher</summary>
+<ol>
+<li>Insert USB drive.</li>
+<li>Open balenaEtcher and select flash from file.</li>
+<li>Open your downloaded ISO.</li>
+<li>Click select target and select USB.</li>
+<li><strong>Flash!</strong></li>
+</ol>
+</details>
+<details class="note">
+<summary>Steps using Linux</summary>
+<p><strong>Option 1</strong>: USB Creator Tool<br />
+1. Insert USB drive.<br />
+2. Open "USB Image Writer"<br />
+3. Select ISO and choose the USB.<br />
+4. Click <strong>Write</strong>, enter password when prompted. <br />
+5. Done! </p>
+<p><strong>Option 2</strong>: <code>dd</code> command<br />
+1. Insert your USB and find its device name.<br />
+Run:<br />
+<code>lsblk</code><br />
+2. Navigate to the directory with the ISO<br />
+<code>cd ~/Downloads</code><br />
+3. <strong>Write</strong> the ISO to USB<br />
+Replace <code>/dev/sdX</code> with the correct device (e.g., <code>/dev/sdb</code>):<br />
+<code>sudo dd if=kdeneon-useredition-current.iso of=/dev/sdX bs=4M status=progress oflag=sync</code><br />
+4. Wait for the process to finish.<br />
+It can take several minutes. Once you see a prompt again, it's done.<br />
+5. Eject the USB safely.<br />
+<code>sudo eject /dev/sdX</code></p>
+</details>
 <hr />
 <h2 id="3-boot-from-the-usb-drive">3. Boot from the USB Drive</h2>
 <ol>
-<li>Restart your computer and enter the boot menu:</li>
-<li>Common keys: <code>F12</code>, <code>ESC</code>, <code>DEL</code>, or <code>F2</code></li>
-<li>Select the USB device from the list.</li>
+<li>Restart your computer and enter the boot menu:  </li>
+<li>
+<p>Common keys: <code>F12</code>, <code>ESC</code>, <code>DEL</code>, or <code>F2</code> </p>
+<div class="admonition warning">
+<p class="admonition-title">Confirm BIOS SATA operation is set to AHCI, not RAID.</p>
+</div>
+</li>
+<li>
+<p>Select the USB device from the list.</p>
+</li>
 <li>Choose <strong>"Start Linux Mint"</strong> from the boot menu.</li>
 </ol>
 <hr />
@@ -525,22 +608,27 @@
 <ol>
 <li>Click the <strong>"Install Linux Mint"</strong> icon on the desktop.</li>
 <li>Choose your language and keyboard layout.</li>
-<li><strong>Installation type:</strong></li>
+<li>Connect to internet (optional)</li>
+<li>
+<p><strong>Installation type:</strong>  </p>
+<ul>
 <li>Replace existing OS</li>
 <li>Install alongside Windows (dual-boot)</li>
-<li>
-<p>Manual partitioning (advanced users)</p>
+<li>Manual partitioning (advanced users)</li>
+</ul>
 </li>
 <li>
 <p>Follow the prompts to:</p>
-</li>
+<ul>
 <li>Set time zone</li>
-<li>Create a username and password</li>
+<li>Create a computer name, username, and password</li>
 <li>Begin installation</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Double-check your partitioning choices, this step can delete data.</p>
+</div>
+</li>
 </ol>
-<blockquote>
-<p>⚠️ <em>Double-check your partitioning choices—this step can delete data.</em></p>
-</blockquote>
 <hr />
 <h2 id="5-first-boot-updates">5. First Boot &amp; Updates</h2>
 <p>After installation:</p>
@@ -548,10 +636,25 @@
 <li>Remove your USB when prompted.</li>
 <li>Restart your computer.</li>
 <li>Log in with your new user account.</li>
-<li>Run:<br />
+<li>
+<p>Run:<br />
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
-</span></code></pre></div></li>
+</span></code></pre></div>
+   to install latest updates.</p>
+<div class="admonition note">
+<p class="admonition-title">Passwords typed in the terminal are invisible.</p>
+</div>
+</li>
 </ol>
+<hr />
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>🎉 Congrats! You have now successfully installed Linux Mint. From here focus on setting up different apps, customizing the desktop or moving over data. Make it feel like home.</p>
+<hr />
+<h2 id="additional-resources">Additional Resources</h2>
+<ul>
+<li><a href="https://easylinuxtipsproject.blogspot.com/p/first-mint-cinnamon.html">10 Things to Do First in Linux Mint</a>  </li>
+<li><a href="https://community.linuxmint.com/tutorial/view/20">The Linux Mint User Guide</a></li>
+</ul>
 
 
 

@@ -1,6 +1,6 @@
 # Installing Linux Mint (Step-by-Step Guide for Beginners)
 
-> Linux Mint is a beginner-friendly, full-featured Linux distribution that's perfect for new and experienced users alike. Providing an easy transition from the Windows environment, this is an excellent first choice. This guide  walks you through installing Linux Mint on your machine, whether you’re replacing an existing OS or setting up dual-boot.
+> Linux Mint is a beginner-friendly, full-featured Linux distribution that's perfect for new and experienced users alike. Providing an easy transition from the Windows environment, this is an excellent first choice within the Linux realm. This guide  walks you through installing Linux Mint on your machine, whether you’re replacing an existing OS or setting up dual-boot.
 
 ---
 
