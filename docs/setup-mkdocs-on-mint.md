@@ -15,7 +15,7 @@
 ## 1. Install git and github cli
 
 * Open terminal and input:
-```
+```bash
 sudo apt update   
 sudo apt install git gh      
 gh auth login
@@ -23,7 +23,7 @@ gh auth login
 
 ## 2. Set up a new mkdocs project
 
-```
+```bash
 mkdocs new my-new-docs  
 cd my-new-docs
 ```
@@ -32,7 +32,7 @@ cd my-new-docs
 
 1. Open Visual Studio Code
 2. Open new terminal inside Visual Studio Code
-```
+```bash
 cd my-new-docs
 python3 -m venv venv  
 source venv/bin/activate
@@ -40,13 +40,13 @@ source venv/bin/activate
 
 ## 4. Install pip
 
-```
+```bash
 sudo apt install python3-pip
 ``` 
 
 ## 5. Install mkdocs and the material theme
 
-```
+```bash
 pip install mkdocs mkdocs-material
 ```
 
@@ -69,7 +69,7 @@ markdown_extensions:
 
 ## 8. Push to github and deploy
 
-```
+```bash
 git init
 git remote add origin https://github.com/<your-username>/my-new-docs.git
 git add .
@@ -86,9 +86,25 @@ mkdocs gh-deploy
 
 ![GitHub Pages settings screenshot](assets/ghpages.png)
 
-!!! success "Done!"
+<br>
+
+!!! success "Success!"
 Your site should be available at:  
 `https://<your-username>.github.io/my-new-docs/`
+
+<br><br>
+
+??? warning "Don't Forget to Deploy"
+
+    * After updating `.md` files run `mkdocs serve` for local updates.
+    * For public updates run the following: 
+        ```bash  
+        git add .  
+        git commit -m "My update message"  
+        git push  
+        mkdocs gh-deploy
+        ```
+    * ⏱️ Note public updates can take 1-3 minutes to apply. 
 
 ---
 
