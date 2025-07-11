@@ -1,4 +1,4 @@
-site_name: My Docs
+site_name: Terminal Text
 theme:
   name: material
   font: 
@@ -7,6 +7,9 @@ theme:
   favicon: assets/lb2c.png
   features:
     - navigation.footer
+  extra_css:
+  - assets/stylesheets/custom.css
+
   palette:
    # primary: deep purple
     # Palette toggle for light mode

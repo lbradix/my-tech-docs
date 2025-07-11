@@ -1,0 +1,14 @@
+/* Vertical bar between nav and content */
+.md-sidebar {
+  border-right: 1px solid #ddd;
+}
+
+/* Vertical bar between content and table of contents */
+.md-content {
+  border-right: 1px solid #ddd;
+}
+
+/* Optional: table of contents sidebar */
+.md-sidebar--secondary {
+  border-left: 1px solid #ddd;
+}
