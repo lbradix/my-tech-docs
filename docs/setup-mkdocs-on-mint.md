@@ -12,6 +12,8 @@
 - [Visual Studio Code](https://code.visualstudio.com/download) 
 - [Python](https://www.python.org/downloads/) 
 
+---
+
 ## 1. Install git and github cli
 
 * Open terminal and input:
@@ -21,12 +23,15 @@ sudo apt install git gh
 gh auth login
 ```
 
+---
+
 ## 2. Set up a new mkdocs project
 
 ```bash
 mkdocs new my-new-docs  
-cd my-new-docs
 ```
+
+---
  
 ## 3. Create a virtual environment
 
@@ -38,17 +43,23 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
+---
+
 ## 4. Install pip
 
 ```bash
 sudo apt install python3-pip
-``` 
+```
+
+---
 
 ## 5. Install mkdocs and the material theme
 
 ```bash
 pip install mkdocs mkdocs-material
 ```
+
+---
 
 ## 6. Customize your `mkdocs.yml`
 
@@ -61,11 +72,14 @@ markdown_extensions:
   - pymdownx.mark
 ```
 
+---
 
 ## 7. Preview your site locally
 
 `mkdocs serve`  
 * View in browser at: http://127.0.0.1:8000
+
+---
 
 ## 8. Push to github and deploy
 
@@ -73,10 +87,14 @@ markdown_extensions:
 git init
 git remote add origin https://github.com/<your-username>/my-new-docs.git
 git add .
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
 git commit -m "Initial commit"
 git push -u origin main
 mkdocs gh-deploy
 ```
+
+---
 
 ## 9. Enable github pages
 
@@ -92,7 +110,7 @@ mkdocs gh-deploy
 Your site should be available at:  
 `https://<your-username>.github.io/my-new-docs/`
 
-<br><br>
+<br>
 
 ??? warning "Don't Forget to Deploy"
 
