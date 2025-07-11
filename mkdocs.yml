@@ -44,6 +44,13 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  
+  - pymdownx.mark:
+
+  #Adding admonition
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences   
 
 copyright: Copyright &copy; 2025 LeValle Bradix
 
