@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../install-mint/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Setting Up MkDocs with Material Theme on Linux Mint - Terminal Text</title>
+        <title>Setting Up MkDocs with Material Theme on Linux Mint - Docs by LB</title>
       
     
     
@@ -86,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Terminal Text" class="md-header__button md-logo" aria-label="Terminal Text" data-md-component="logo">
+    <a href=".." title="Docs by LB" class="md-header__button md-logo" aria-label="Docs by LB" data-md-component="logo">
       
   <img src="../assets/lb2c.png" alt="logo">
 
@@ -99,7 +99,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Terminal Text
+            Docs by LB
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -209,12 +209,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Terminal Text" class="md-nav__button md-logo" aria-label="Terminal Text" data-md-component="logo">
+    <a href=".." title="Docs by LB" class="md-nav__button md-logo" aria-label="Docs by LB" data-md-component="logo">
       
   <img src="../assets/lb2c.png" alt="logo">
 
     </a>
-    Terminal Text
+    Docs by LB
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -232,6 +232,28 @@
   
   <span class="md-ellipsis">
     Welcome
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install-mint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installing Linux Mint
     
   </span>
   
@@ -300,7 +322,7 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      📝 Prerequisites
     </span>
   </a>
   
@@ -433,7 +455,7 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      📝 Prerequisites
     </span>
   </a>
   
@@ -550,7 +572,7 @@
 <p>A step-by-step guide to creating a professional documentation site using MkDocs and GitHub Pages.</p>
 </blockquote>
 <hr />
-<h2 id="prerequisites">Prerequisites</h2>
+<h2 id="prerequisites">📝 Prerequisites</h2>
 <ul>
 <li><a href="https://linuxmint.com/download.php">Linux Mint</a> installed </li>
 <li><a href="https://github.com/">GitHub</a> account</li>
@@ -561,29 +583,29 @@
 <h2 id="1-install-git-and-github-cli">1. Install git and github cli</h2>
 <ul>
 <li>Open terminal and input:
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo apt update   
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo apt install git gh      
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>gh auth login
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w">   </span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git<span class="w"> </span>gh<span class="w">      </span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>gh<span class="w"> </span>auth<span class="w"> </span>login
 </span></code></pre></div></li>
 </ul>
 <h2 id="2-set-up-a-new-mkdocs-project">2. Set up a new mkdocs project</h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mkdocs new my-new-docs  
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>cd my-new-docs
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mkdocs<span class="w"> </span>new<span class="w"> </span>my-new-docs<span class="w">  </span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">cd</span><span class="w"> </span>my-new-docs
 </span></code></pre></div>
 <h2 id="3-create-a-virtual-environment">3. Create a virtual environment</h2>
 <ol>
 <li>Open Visual Studio Code</li>
 <li>Open new terminal inside Visual Studio Code
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cd my-new-docs
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>python3 -m venv venv  
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>source venv/bin/activate
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>my-new-docs
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv<span class="w">  </span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">source</span><span class="w"> </span>venv/bin/activate
 </span></code></pre></div></li>
 </ol>
 <h2 id="4-install-pip">4. Install pip</h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo apt install python3-pip
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-pip
 </span></code></pre></div>
 <h2 id="5-install-mkdocs-and-the-material-theme">5. Install mkdocs and the material theme</h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip install mkdocs mkdocs-material
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs<span class="w"> </span>mkdocs-material
 </span></code></pre></div>
 <h2 id="6-customize-your-mkdocsyml">6. Customize your <code>mkdocs.yml</code></h2>
 <ul>
@@ -598,12 +620,12 @@
 <p><code>mkdocs serve</code><br />
 * View in browser at: http://127.0.0.1:8000</p>
 <h2 id="8-push-to-github-and-deploy">8. Push to github and deploy</h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git init
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>git remote add origin https://github.com/&lt;your-username&gt;/my-new-docs.git
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>git add .
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>git commit -m &quot;Initial commit&quot;
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>git push -u origin main
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>mkdocs gh-deploy
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>init
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/&lt;your-username&gt;/my-new-docs.git
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>git<span class="w"> </span>add<span class="w"> </span>.
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Initial commit&quot;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>mkdocs<span class="w"> </span>gh-deploy
 </span></code></pre></div>
 <h2 id="9-enable-github-pages">9. Enable github pages</h2>
 <ol>
@@ -614,11 +636,26 @@
 </li>
 </ol>
 <p><img alt="GitHub Pages settings screenshot" src="../assets/ghpages.png" /></p>
+<p><br></p>
 <div class="admonition success">
-<p class="admonition-title">Done!</p>
+<p class="admonition-title">Success!</p>
 </div>
 <p>Your site should be available at:<br />
 <code>https://&lt;your-username&gt;.github.io/my-new-docs/</code></p>
+<p><br><br></p>
+<details class="warning">
+<summary>Don't Forget to Deploy</summary>
+<ul>
+<li>After updating <code>.md</code> files run <code>mkdocs serve</code> for local updates.</li>
+<li>For public updates run the following: 
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git<span class="w"> </span>add<span class="w"> </span>.<span class="w">  </span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;My update message&quot;</span><span class="w">  </span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>git<span class="w"> </span>push<span class="w">  </span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>mkdocs<span class="w"> </span>gh-deploy
+</span></code></pre></div></li>
+<li>⏱️ Note public updates can take 1-3 minutes to apply. </li>
+</ul>
+</details>
 <hr />
 <h2 id="additional-resources">Additional Resources</h2>
 <ul>
@@ -656,7 +693,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Welcome">
+          <a href="../install-mint/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installing Linux Mint">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -666,7 +703,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Welcome
+                Installing Linux Mint
               </div>
             </div>
           </a>

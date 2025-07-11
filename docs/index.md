@@ -14,7 +14,8 @@ I transitioned into technical writing from a background in IT and system adminis
 
 ## Start Exploring
 
-Check out:
+Check out:  
+- [Installing Linux Mint](install-mint.md)  
 - [Setting Up MkDocs with Material Theme on Linux Mint](setup-mkdocs-on-mint.md)  
 - [More coming soon...]
 
