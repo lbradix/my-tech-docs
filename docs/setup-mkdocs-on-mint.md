@@ -107,8 +107,9 @@ mkdocs gh-deploy
 <br>
 
 !!! success "Success!"
-Your site should be available at:  
-`https://<your-username>.github.io/my-new-docs/`
+
+- Your site should be available at:  
+  `https://<your-username>.github.io/my-new-docs/`
 
 <br>
 
