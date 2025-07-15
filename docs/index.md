@@ -17,6 +17,7 @@ I transitioned into technical writing from a background in IT and system adminis
 Check out:  
 - [Installing Linux Mint (Step-by-Step Guide for Beginners)](install-mint.md)  
 - [Setting Up MkDocs with Material Theme on Linux Mint](setup-mkdocs-on-mint.md)  
+- [Joining Ubuntu-Based Linux Devices to Windows Server 2025 Active Directory (Winbind Method)](join-linux-to-windows-2025-ad.md)  
 - [More coming soon...]
 
 Thanks for visiting!

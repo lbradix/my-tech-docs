@@ -131,6 +131,10 @@ After installation:
 - [10 Things to Do First in Linux Mint](https://easylinuxtipsproject.blogspot.com/p/first-mint-cinnamon.html)  
 - [The Linux Mint User Guide](https://community.linuxmint.com/tutorial/view/20)
 
+<br>
+
+[&uarr; Back to top](#installing-linux-mint-step-by-step-guide-for-beginners)
+
 
 
    

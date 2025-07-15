@@ -132,3 +132,7 @@ mkdocs gh-deploy
 - [MkDocs Material Theme Docs](https://squidfunk.github.io/mkdocs-material/)
 - [GitHub CLI Manual](https://cli.github.com/manual/)
 - [Material for MkDocs: Full Tutorial To Build And Deploy Your Docs Portal](https://www.youtube.com/watch?v=xlABhbnNrfI&t=227s)
+
+<br>
+
+[&uarr; Back to top](#setting-up-mkdocs-with-material-theme-on-linux-mint)
