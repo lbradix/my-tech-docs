@@ -1,0 +1,1172 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../install-mint/">
+      
+      
+        <link rel="next" href="../setup-mkdocs-on-mint/">
+      
+      
+      <link rel="icon" href="../assets/lb2c.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Joining Ubuntu-Based Linux Devices to Windows Server 2025 Active Directory (Winbind Method) - Docs by LB</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Grotesk:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Space Grotesk";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#joining-ubuntu-based-linux-devices-to-windows-server-2025-active-directory-winbind-method" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Docs by LB" class="md-header__button md-logo" aria-label="Docs by LB" data-md-component="logo">
+      
+  <img src="../assets/lb2c.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Docs by LB
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Joining Ubuntu-Based Linux Devices to Windows Server 2025 Active Directory (Winbind Method)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Docs by LB" class="md-nav__button md-logo" aria-label="Docs by LB" data-md-component="logo">
+      
+  <img src="../assets/lb2c.png" alt="logo">
+
+    </a>
+    Docs by LB
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install-mint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installing Linux Mint (Step-by-Step Guide for Beginners)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Joining Ubuntu-Based Linux Devices to Windows Server 2025 Active Directory (Winbind Method)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Joining Ubuntu-Based Linux Devices to Windows Server 2025 Active Directory (Winbind Method)
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-set-hostname" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Set hostname
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-set-dns-to-the-ad-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Set dns to the ad server
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-install-required-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Install required packages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configure-kerberos" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Configure Kerberos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configure-samba" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Configure Samba
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-configure-nss" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Configure nss
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-restart-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Restart services
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-test-kerberos-and-join-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Test kerberos and join domain
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-test-identity-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Test identity resolution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-enable-domain-login-and-home-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Enable domain login and home creation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-reboot-and-log-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Reboot and log in
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Troubleshooting &amp; Common Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Troubleshooting &amp; Common Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kinit-cannot-find-kdc-for-realm-realm" class="md-nav__link">
+    <span class="md-ellipsis">
+      * kinit: Cannot find KDC for realm "&lt;REALM&gt;"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#net-ads-join-returns-dns-update-failed" class="md-nav__link">
+    <span class="md-ellipsis">
+      * net ads join returns DNS update failed!
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#login-fails-after-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      * Login fails after join
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getent-passwd-domain-user-returns-nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      * getent passwd &lt;domain-user&gt; returns nothing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#winbind-u-and-g-return-nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      * winbind -u and -g return nothing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup-mkdocs-on-mint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setting Up MkDocs with Material Theme on Linux Mint
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Vaultwarden
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Vaultwarden
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vaultwarden/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vaultwarden User Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vaultwarden/browser-extension/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using the Vaultwarden Browser Extension
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vaultwarden/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started with Vaultwarden
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vaultwarden/managing-vault/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Managing Your Vault
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-set-hostname" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Set hostname
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-set-dns-to-the-ad-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Set dns to the ad server
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-install-required-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Install required packages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configure-kerberos" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Configure Kerberos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configure-samba" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Configure Samba
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-configure-nss" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Configure nss
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-restart-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Restart services
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-test-kerberos-and-join-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Test kerberos and join domain
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-test-identity-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Test identity resolution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-enable-domain-login-and-home-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Enable domain login and home creation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-reboot-and-log-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Reboot and log in
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Troubleshooting &amp; Common Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Troubleshooting &amp; Common Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kinit-cannot-find-kdc-for-realm-realm" class="md-nav__link">
+    <span class="md-ellipsis">
+      * kinit: Cannot find KDC for realm "&lt;REALM&gt;"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#net-ads-join-returns-dns-update-failed" class="md-nav__link">
+    <span class="md-ellipsis">
+      * net ads join returns DNS update failed!
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#login-fails-after-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      * Login fails after join
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getent-passwd-domain-user-returns-nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      * getent passwd &lt;domain-user&gt; returns nothing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#winbind-u-and-g-return-nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      * winbind -u and -g return nothing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="joining-ubuntu-based-linux-devices-to-windows-server-2025-active-directory-winbind-method">Joining Ubuntu-Based Linux Devices to Windows Server 2025 Active Directory (Winbind Method)</h1>
+<p>Use this guide to join a Debian/Ubuntu-based Linux system (like KDE Neon, Mint or Zorin) to a Windows Server 2025 AD domain using <code>winbind</code>, <code>samba</code>, and Kerberos.</p>
+<hr />
+<h2 id="prerequisites">📋 Prerequisites</h2>
+<ul>
+<li>Windows Server 2025 configured as Domain Controller</li>
+<li>Domain name </li>
+<li>AD server IP</li>
+<li>Domain join account</li>
+<li>Linux client with sudo access</li>
+</ul>
+<hr />
+<h2 id="1-set-hostname">1. Set hostname</h2>
+<ul>
+<li>Run:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>hostnamectl<span class="w"> </span>set-hostname<span class="w"> </span>&lt;your-hostname&gt;
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/hosts
+</span></code></pre></div>
+<ul>
+<li>
+<p>Replace any instance of the old hostname.</p>
+</li>
+<li>
+<p>Reboot:</p>
+</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>reboot
+</span></code></pre></div>
+<hr />
+<h2 id="2-set-dns-to-the-ad-server">2. Set dns to the ad server</h2>
+<ul>
+<li>Point <code>/etc/resolv.conf</code> to your server:  </li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/resolv.conf
+</span></code></pre></div>
+<ul>
+<li>Add:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>nameserver<span class="w"> </span>&lt;server-IP&gt;
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>search<span class="w"> </span>&lt;domain-name&gt;
+</span></code></pre></div>
+<hr />
+<h2 id="3-install-required-packages">3. Install required packages</h2>
+<ul>
+<li>Run:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>samba<span class="w"> </span>krb5-user<span class="w"> </span>winbind<span class="w"> </span>libpam-winbind<span class="w"> </span>libnss-winbind<span class="w"> </span>-y
+</span></code></pre></div>
+<ul>
+<li>When prompted the Kerberos installer, enter your <strong>default realm</strong>.  </li>
+<li>Leave other prompts blank and press Enter.</li>
+</ul>
+<hr />
+<h2 id="4-configure-kerberos">4. Configure Kerberos</h2>
+<p><code>sudo nano /etc/krb5.conf</code></p>
+<ul>
+<li>Update to:</li>
+</ul>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">[libdefaults]</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="na">default_realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;domain-name&gt;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="na">dns_lookup_realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">false</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="na">dns_lookup_kdc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+</span></code></pre></div>
+<hr />
+<h2 id="5-configure-samba">5. Configure Samba</h2>
+<ul>
+<li>Backup and replace <code>/etc/samba/smb.conf</code>:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>cp<span class="w"> </span>/etc/samba/smb.conf<span class="w"> </span>/etc/samba/smb.conf.bak
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/samba/smb.conf
+</span></code></pre></div>
+<ul>
+<li>Paste in:</li>
+</ul>
+<p><div class="language-ini highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">[global]</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="na">workgroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;workgroup&gt;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="na">realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;domain-name&gt;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="na">security</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">ads</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="na">client signing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="na">client use spnego</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="na">kerberos method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">secrets and keytab</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span><span class="na">log file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/var/log/samba/%m/log</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">  </span><span class="na">log level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">  </span><span class="na">winbind refresh tickets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">  </span><span class="na">winbind use default domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">  </span><span class="na">winbind offline logon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">  </span><span class="na">idmap config *</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">backend = tdb</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">  </span><span class="na">idmap config *</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">range = 10000-20000</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">  </span><span class="na">template shell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/bin/bash</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">  </span><span class="na">template homedir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/home/%U</span>
+</span></code></pre></div>
+<br></p>
+<details class="tip">
+<summary>How to Select all in Nano Text Editor</summary>
+<ol>
+<li>Press "Alt + Backslash" keys together. This moves the cursor to the start of the file.  </li>
+<li>Press "Ctrl + 6" keys together. This sets a mark at the current cursor position.  </li>
+<li>Press "Alt + Forward Slash" keys together. This moves the cursor to the end of the file.</li>
+<li>Press "Ctrl Shift K keys together. This will clear all selected text.</li>
+</ol>
+</details>
+<hr />
+<h2 id="6-configure-nss">6. Configure nss</h2>
+<p><code>sudo nano /etc/nsswitch.conf</code><br />
+- Add <code>winbind</code> to these lines:</p>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="na">passwd</span><span class="o">:</span><span class="w">         </span><span class="s">compat winbind</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="na">group</span><span class="o">:</span><span class="w">          </span><span class="s">compat winbind</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="na">shadow</span><span class="o">:</span><span class="w">         </span><span class="s">compat</span>
+</span></code></pre></div>
+<hr />
+<h2 id="7-restart-services">7. Restart services</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>smbd<span class="w"> </span>nmbd<span class="w"> </span>winbind
+</span></code></pre></div>
+<ul>
+<li>Enable on boot:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>winbind
+</span></code></pre></div>
+<hr />
+<h2 id="8-test-kerberos-and-join-domain">8. Test kerberos and join domain</h2>
+<ul>
+<li>Test authentication: </li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>kinit<span class="w"> </span>&lt;domain-user&gt;
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">You'll most likely see a password expiration message, that's fine.</p>
+</div>
+<ul>
+<li>Then join:  </li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo<span class="w"> </span>net<span class="w"> </span>ads<span class="w"> </span>join<span class="w"> </span>-U<span class="w"> </span>&lt;domain-user&gt;
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Seeing DNS update failed is normal.</p>
+</div>
+<hr />
+<h2 id="9-test-identity-resolution">9. Test identity resolution</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>wbinfo<span class="w"> </span>-u<span class="w">     </span><span class="c1"># List domain users</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>wbinfo<span class="w"> </span>-g<span class="w">     </span><span class="c1"># List domain groups</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>getent<span class="w"> </span>passwd<span class="w"> </span>&lt;domain-user&gt;
+</span></code></pre></div>
+<hr />
+<h2 id="10-enable-domain-login-and-home-creation">10. Enable domain login and home creation</h2>
+<ul>
+<li>Edit PAM and enable home dir creation:  </li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo<span class="w"> </span>pam-auth-update
+</span></code></pre></div>
+<blockquote>
+<p>Below is what your pam settings should look like:</p>
+</blockquote>
+<p><img alt="Pam settings screenshot" src="../assets/pam.png" /></p>
+<p><br></p>
+<hr />
+<h2 id="11-reboot-and-log-in">11. Reboot and log in</h2>
+<p><code>sudo reboot</code><br />
+- Log in with domain user credentials.<br />
+- The system will create a home folder for the user.</p>
+<hr />
+<p><br></p>
+<div class="admonition success">
+<p class="admonition-title">Success! Your Linux device is now joined to the Windows Server 2025 Active Directory domain using the winbind.</p>
+</div>
+<p><br></p>
+<hr />
+<h2 id="troubleshooting-common-issues">🛠️ Troubleshooting &amp; Common Issues</h2>
+<hr />
+<h3 id="kinit-cannot-find-kdc-for-realm-realm">* <code>kinit: Cannot find KDC for realm "&lt;REALM&gt;"</code></h3>
+<p>Fix:<br />
+- Ensure <code>/etc/resolv.conf</code> points to your DC IP<br />
+- Verify <code>default_realm</code> is UPPERCASE in <code>/etc/krb5.conf</code><br />
+- Test DNS:<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>dig<span class="w"> </span>&lt;domain-name&gt;
+</span></code></pre></div></p>
+<hr />
+<h3 id="net-ads-join-returns-dns-update-failed">* <code>net ads join</code> <strong>returns</strong> <code>DNS update failed!</code></h3>
+<p>Fix:<br />
+Usually safe to ignore if you can log in and resolve domain names.</p>
+<hr />
+<h3 id="login-fails-after-join">* <strong>Login fails after join</strong></h3>
+<p>Fix:<br />
+- Ensure <code>winbind</code> is running:<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>winbind
+</span></code></pre></div>
+- Re-run: 
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>sudo<span class="w"> </span>pam-auth-update
+</span></code></pre></div></p>
+<hr />
+<h3 id="getent-passwd-domain-user-returns-nothing">* <code>getent passwd &lt;domain-user&gt;</code> <strong>returns nothing</strong></h3>
+<p>Fix:<br />
+- Check <code>/etc/nsswitch.conf</code> has <code>winbind</code> on the correct lines.<br />
+- Restart <code>windbind</code>:<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>sudo<span class="w"> </span>systemct<span class="w"> </span>restart<span class="w"> </span>winbind
+</span></code></pre></div></p>
+<hr />
+<h3 id="winbind-u-and-g-return-nothing">* <code>winbind -u</code> <strong>and</strong> <code>-g</code> <strong>return nothing</strong></h3>
+<p>Fix:<br />
+- Validate <code>/etc/samba/smb.conf</code> and <code>/etc/krb5.conf</code> formatting.<br />
+- Ensure realm and workgroup are correct.</p>
+<p><br></p>
+<p><a href="#joining-ubuntu-based-linux-devices-to-windows-server-2025-active-directory-winbind-method">&uarr; Back to top</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../install-mint/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installing Linux Mint (Step-by-Step Guide for Beginners)">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Installing Linux Mint (Step-by-Step Guide for Beginners)
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../setup-mkdocs-on-mint/" class="md-footer__link md-footer__link--next" aria-label="Next: Setting Up MkDocs with Material Theme on Linux Mint">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Setting Up MkDocs with Material Theme on Linux Mint
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 LeValle Bradix
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.footer"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>
