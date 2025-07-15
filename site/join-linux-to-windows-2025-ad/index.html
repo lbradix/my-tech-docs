@@ -20,7 +20,7 @@
     
     
       
-        <title>Joining a Linux Device to Windows Server 2025 Active Directory (Winbind Method) - Docs by LB</title>
+        <title>Joining Ubuntu-Based Linux Devices to Windows Server 2025 Active Directory (Winbind Method) - Docs by LB</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#joining-a-linux-device-to-windows-server-2025-active-directory-winbind-method" class="md-skip">
+        <a href="#joining-ubuntu-based-linux-devices-to-windows-server-2025-active-directory-winbind-method" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Joining a Linux Device to Windows Server 2025 Active Directory (Winbind Method)
+              Joining Ubuntu-Based Linux Devices to Windows Server 2025 Active Directory (Winbind Method)
             
           </span>
         </div>
@@ -286,7 +286,7 @@
   
   
   <span class="md-ellipsis">
-    Joining a Linux Device to Windows Server 2025 Active Directory (Winbind Method)
+    Joining Ubuntu-Based Linux Devices to Windows Server 2025 Active Directory (Winbind Method)
     
   </span>
   
@@ -299,7 +299,7 @@
   
   
   <span class="md-ellipsis">
-    Joining a Linux Device to Windows Server 2025 Active Directory (Winbind Method)
+    Joining Ubuntu-Based Linux Devices to Windows Server 2025 Active Directory (Winbind Method)
     
   </span>
   
@@ -342,7 +342,7 @@
         <li class="md-nav__item">
   <a href="#2-set-dns-to-the-ad-server" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Set DNS to the AD server
+      2. Set dns to the ad server
     </span>
   </a>
   
@@ -426,6 +426,66 @@
       11. Reboot and log in
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Troubleshooting &amp; Common Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Troubleshooting &amp; Common Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kinit-cannot-find-kdc-for-realm-realm" class="md-nav__link">
+    <span class="md-ellipsis">
+      * kinit: Cannot find KDC for realm "&lt;REALM&gt;"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#net-ads-join-returns-dns-update-failed" class="md-nav__link">
+    <span class="md-ellipsis">
+      * net ads join returns DNS update failed!
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#login-fails-after-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      * Login fails after join
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getent-passwd-domain-user-returns-nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      * getent passwd &lt;domain-user&gt; returns nothing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#winbind-u-and-g-return-nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      * winbind -u and -g return nothing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -506,7 +566,7 @@
         <li class="md-nav__item">
   <a href="#2-set-dns-to-the-ad-server" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Set DNS to the AD server
+      2. Set dns to the ad server
     </span>
   </a>
   
@@ -593,6 +653,66 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#troubleshooting-common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Troubleshooting &amp; Common Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Troubleshooting &amp; Common Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kinit-cannot-find-kdc-for-realm-realm" class="md-nav__link">
+    <span class="md-ellipsis">
+      * kinit: Cannot find KDC for realm "&lt;REALM&gt;"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#net-ads-join-returns-dns-update-failed" class="md-nav__link">
+    <span class="md-ellipsis">
+      * net ads join returns DNS update failed!
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#login-fails-after-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      * Login fails after join
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getent-passwd-domain-user-returns-nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      * getent passwd &lt;domain-user&gt; returns nothing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#winbind-u-and-g-return-nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      * winbind -u and -g return nothing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -609,90 +729,100 @@
 
 
 
-<h1 id="joining-a-linux-device-to-windows-server-2025-active-directory-winbind-method">Joining a Linux Device to Windows Server 2025 Active Directory (Winbind Method)</h1>
+<h1 id="joining-ubuntu-based-linux-devices-to-windows-server-2025-active-directory-winbind-method">Joining Ubuntu-Based Linux Devices to Windows Server 2025 Active Directory (Winbind Method)</h1>
 <p>Use this guide to join a Debian/Ubuntu-based Linux system (like KDE Neon, Mint or Zorin) to a Windows Server 2025 AD domain using <code>winbind</code>, <code>samba</code>, and Kerberos.</p>
 <hr />
 <h2 id="prerequisites">📝 Prerequisites</h2>
 <ul>
 <li>Windows Server 2025 configured as Domain Controller</li>
-<li>Domain name: <code>bradix.org</code></li>
-<li>AD server IP: <code>192.168.10.31</code></li>
-<li>Domain join account (e.g., <code>lbradix</code>)</li>
+<li>Domain name </li>
+<li>AD server IP</li>
+<li>Domain join account</li>
 <li>Linux client with sudo access</li>
 </ul>
 <hr />
 <h2 id="1-set-hostname">1. Set hostname</h2>
 <ul>
-<li>Run:
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>hostnamectl<span class="w"> </span>set-hostname<span class="w"> </span>&lt;your-hostname&gt;
-</span></code></pre></div></li>
-<li>Update any old occurrences of the hostname located at <code>/etc/hosts</code></li>
-<li>Run:
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/hosts
-</span></code></pre></div></li>
-<li>Reboot
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>reboot
-</span></code></pre></div></li>
+<li>Run:</li>
 </ul>
-<hr />
-<h2 id="2-set-dns-to-the-ad-server">2. Set DNS to the AD server</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>hostnamectl<span class="w"> </span>set-hostname<span class="w"> </span>&lt;your-hostname&gt;
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/hosts
+</span></code></pre></div>
 <ul>
-<li>Point <code>/etc/resolv.conf</code> to your Windows Server:<br />
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/resolv.conf
-</span></code></pre></div></li>
-<li>Edit <code>/etc/resolv.conf</code> to show the follow output:
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nameserver<span class="w"> </span>&lt;server-IP&gt;
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>search<span class="w"> </span>&lt;server-domain&gt;
-</span></code></pre></div></li>
+<li>
+<p>Replace any instance of the old hostname.</p>
+</li>
+<li>
+<p>Reboot:</p>
+</li>
 </ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>reboot
+</span></code></pre></div>
+<hr />
+<h2 id="2-set-dns-to-the-ad-server">2. Set dns to the ad server</h2>
+<ul>
+<li>Point <code>/etc/resolv.conf</code> to your server:  </li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/resolv.conf
+</span></code></pre></div>
+<ul>
+<li>Add:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>nameserver<span class="w"> </span>&lt;server-IP&gt;
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>search<span class="w"> </span>&lt;domain-name&gt;
+</span></code></pre></div>
 <hr />
 <h2 id="3-install-required-packages">3. Install required packages</h2>
 <ul>
-<li>Run:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>samba<span class="w"> </span>krb5-user<span class="w"> </span>winbind<span class="w"> </span>libpam-winbind<span class="w"> </span>libnss-winbind<span class="w"> </span>-y
-</span></code></pre></div></li>
-<li>When prompted during <code>krb5-user</code> install, enter:<br />
-<div class="language-rust highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">Default</span><span class="w"> </span><span class="n">realm</span><span class="p">:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">server</span><span class="o">-</span><span class="n">domain</span><span class="o">&gt;</span>
-</span></code></pre></div></li>
-<li>Press enter on any other prompts, leaving them blank</li>
+<li>Run:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>samba<span class="w"> </span>krb5-user<span class="w"> </span>winbind<span class="w"> </span>libpam-winbind<span class="w"> </span>libnss-winbind<span class="w"> </span>-y
+</span></code></pre></div>
+<ul>
+<li>When prompted the Kerberos installer, enter your <strong>default realm</strong>.  </li>
+<li>Leave other prompts blank and press Enter.</li>
 </ul>
 <hr />
 <h2 id="4-configure-kerberos">4. Configure Kerberos</h2>
+<p><code>sudo nano /etc/krb5.conf</code></p>
 <ul>
-<li>Edit <code>/etc/krb5.conf</code>:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">[libdefaults]</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="na">default_realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;server-domain&gt;</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="na">dns_lookup_realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">false</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="na">dns_lookup_kdc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
-</span></code></pre></div></li>
+<li>Update to:</li>
 </ul>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">[libdefaults]</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="na">default_realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;domain-name&gt;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="na">dns_lookup_realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">false</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="na">dns_lookup_kdc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+</span></code></pre></div>
 <hr />
 <h2 id="5-configure-samba">5. Configure Samba</h2>
 <ul>
-<li>Backup and replace <code>/etc/samba/smb.conf</code>:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>cp<span class="w"> </span>/etc/samba/smb.conf<span class="w"> </span>/etc/samba/smb.conf.bak
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/samba/smb.conf
-</span></code></pre></div></li>
-<li>Paste in:
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">[global]</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="na">workgroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;server-workgroup&gt;</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="na">realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;server-domain&gt;</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="na">security</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">ads</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span><span class="na">client signing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="na">client use spnego</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">  </span><span class="na">kerberos method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">secrets and keytab</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">  </span><span class="na">log file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/var/log/samba/%m/log</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">  </span><span class="na">log level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">  </span><span class="na">winbind refresh tickets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">  </span><span class="na">winbind use default domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">  </span><span class="na">winbind offline logon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">  </span><span class="na">idmap config *</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">backend = tdb</span>
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">  </span><span class="na">idmap config *</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">range = 10000-20000</span>
-</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">  </span><span class="na">template shell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/bin/bash</span>
-</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">  </span><span class="na">template homedir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/home/%U</span>
-</span></code></pre></div></li>
+<li>Backup and replace <code>/etc/samba/smb.conf</code>:</li>
 </ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>cp<span class="w"> </span>/etc/samba/smb.conf<span class="w"> </span>/etc/samba/smb.conf.bak
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/samba/smb.conf
+</span></code></pre></div>
+<ul>
+<li>Paste in:</li>
+</ul>
+<p><div class="language-ini highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">[global]</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="na">workgroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;workgroup&gt;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="na">realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;domain-name&gt;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="na">security</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">ads</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="na">client signing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="na">client use spnego</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="na">kerberos method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">secrets and keytab</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span><span class="na">log file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/var/log/samba/%m/log</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">  </span><span class="na">log level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">  </span><span class="na">winbind refresh tickets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">  </span><span class="na">winbind use default domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">  </span><span class="na">winbind offline logon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">  </span><span class="na">idmap config *</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">backend = tdb</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">  </span><span class="na">idmap config *</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">range = 10000-20000</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">  </span><span class="na">template shell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/bin/bash</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">  </span><span class="na">template homedir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/home/%U</span>
+</span></code></pre></div>
+<br></p>
 <details class="tip">
 <summary>How to Select all in Nano Text Editor</summary>
 <ol>
@@ -704,68 +834,105 @@
 </details>
 <hr />
 <h2 id="6-configure-nss">6. Configure nss</h2>
-<ul>
-<li>Edit <code>/etc/nsswitch.conf</code>, update these lines:<br />
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="na">passwd</span><span class="o">:</span><span class="w">         </span><span class="s">compat winbind</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="na">group</span><span class="o">:</span><span class="w">          </span><span class="s">compat winbind</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="na">shadow</span><span class="o">:</span><span class="w">         </span><span class="s">compat</span>
-</span></code></pre></div></li>
-</ul>
+<p><code>sudo nano /etc/nsswitch.conf</code><br />
+- Add <code>winbind</code> to these lines:</p>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="na">passwd</span><span class="o">:</span><span class="w">         </span><span class="s">compat winbind</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="na">group</span><span class="o">:</span><span class="w">          </span><span class="s">compat winbind</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="na">shadow</span><span class="o">:</span><span class="w">         </span><span class="s">compat</span>
+</span></code></pre></div>
 <hr />
 <h2 id="7-restart-services">7. Restart services</h2>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>smbd<span class="w"> </span>nmbd<span class="w"> </span>winbind
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>smbd<span class="w"> </span>nmbd<span class="w"> </span>winbind
 </span></code></pre></div>
-- Enable on boot:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>winbind
-</span></code></pre></div></p>
+<ul>
+<li>Enable on boot:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>winbind
+</span></code></pre></div>
 <hr />
 <h2 id="8-test-kerberos-and-join-domain">8. Test kerberos and join domain</h2>
 <ul>
-<li>Test authentication: 
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>kinit<span class="w"> </span>&lt;server-domian-user&gt;
-</span></code></pre></div></li>
+<li>Test authentication: </li>
 </ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>kinit<span class="w"> </span>&lt;domain-user&gt;
+</span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">You'll most likely see a password expiration message, that's fine.</p>
 </div>
 <ul>
-<li>Then join:<br />
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo<span class="w"> </span>net<span class="w"> </span>ads<span class="w"> </span>join<span class="w"> </span>-U<span class="w"> </span>&lt;server-domian-user&gt;
-</span></code></pre></div></li>
+<li>Then join:  </li>
 </ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo<span class="w"> </span>net<span class="w"> </span>ads<span class="w"> </span>join<span class="w"> </span>-U<span class="w"> </span>&lt;domain-user&gt;
+</span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Seeing DNS update failed is normal.</p>
 </div>
 <hr />
 <h2 id="9-test-identity-resolution">9. Test identity resolution</h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>wbinfo<span class="w"> </span>-u<span class="w">     </span><span class="c1"># List domain users</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>wbinfo<span class="w"> </span>-g<span class="w">     </span><span class="c1"># List domain groups</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>getent<span class="w"> </span>passwd<span class="w"> </span>&lt;server-domian-user&gt;
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>wbinfo<span class="w"> </span>-u<span class="w">     </span><span class="c1"># List domain users</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>wbinfo<span class="w"> </span>-g<span class="w">     </span><span class="c1"># List domain groups</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>getent<span class="w"> </span>passwd<span class="w"> </span>&lt;domain-user&gt;
 </span></code></pre></div>
 <hr />
 <h2 id="10-enable-domain-login-and-home-creation">10. Enable domain login and home creation</h2>
 <ul>
-<li>Edit PAM and enable home dir creation:<br />
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo<span class="w"> </span>pam-auth-update
-</span></code></pre></div><blockquote>
+<li>Edit PAM and enable home dir creation:  </li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo<span class="w"> </span>pam-auth-update
+</span></code></pre></div>
+<blockquote>
 <p>Below is what your pam settings should look like:</p>
 </blockquote>
-</li>
-</ul>
-<p><img alt="GitHub Pages settings screenshot" src="../assets/pam.png" /></p>
+<p><img alt="Pam settings screenshot" src="../assets/pam.png" /></p>
 <p><br></p>
 <hr />
 <h2 id="11-reboot-and-log-in">11. Reboot and log in</h2>
-<ul>
-<li>Now reboot and log in with domain user:</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Password will be pulled from the domain.</p>
-</div>
+<p><code>sudo reboot</code><br />
+- Log in with domain user credentials.<br />
+- The system will create a home folder for the user.</p>
 <hr />
+<p><br></p>
 <div class="admonition success">
-<p class="admonition-title">Success! Your Linux device is now joined to the Windows Server 2025 Active Directory domain using the Winbind method</p>
+<p class="admonition-title">Success! Your Linux device is now joined to the Windows Server 2025 Active Directory domain using the winbind.</p>
 </div>
+<p><br></p>
+<hr />
+<h2 id="troubleshooting-common-issues">🛠️ Troubleshooting &amp; Common Issues</h2>
+<hr />
+<h3 id="kinit-cannot-find-kdc-for-realm-realm">* <code>kinit: Cannot find KDC for realm "&lt;REALM&gt;"</code></h3>
+<p>Fix:<br />
+- Ensure <code>/etc/resolv.conf</code> points to your DC IP<br />
+- Verify <code>default_realm</code> is UPPERCASE in <code>/etc/krb5.conf</code><br />
+- Test DNS:<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>dig<span class="w"> </span>&lt;domain-name&gt;
+</span></code></pre></div></p>
+<hr />
+<h3 id="net-ads-join-returns-dns-update-failed">* <code>net ads join</code> <strong>returns</strong> <code>DNS update failed!</code></h3>
+<p>Fix:<br />
+Usually safe to ignore if you can log in and resolve domain names.</p>
+<hr />
+<h3 id="login-fails-after-join">* <strong>Login fails after join</strong></h3>
+<p>Fix:<br />
+- Ensure <code>winbind</code> is running:<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>winbind
+</span></code></pre></div>
+- Re-run: 
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>sudo<span class="w"> </span>pam-auth-update
+</span></code></pre></div></p>
+<hr />
+<h3 id="getent-passwd-domain-user-returns-nothing">* <code>getent passwd &lt;domain-user&gt;</code> <strong>returns nothing</strong></h3>
+<p>Fix:<br />
+- Check <code>/etc/nsswitch.conf</code> has <code>winbind</code> on the correct lines.<br />
+- Restart <code>windbind</code>:<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>sudo<span class="w"> </span>systemct<span class="w"> </span>restart<span class="w"> </span>winbind
+</span></code></pre></div></p>
+<hr />
+<h3 id="winbind-u-and-g-return-nothing">* <code>winbind -u</code> <strong>and</strong> <code>-g</code> <strong>return nothing</strong></h3>
+<p>Fix:<br />
+- Validate <code>/etc/samba/smb.conf</code> and <code>/etc/krb5.conf</code> formatting.<br />
+- Ensure realm and workgroup are correct.</p>
+<p><br></p>
+<p><a href="#joining-ubuntu-based-linux-devices-to-windows-server-2025-active-directory-winbind-method">&uarr; Back to top</a></p>
 
 
 

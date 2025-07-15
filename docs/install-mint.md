@@ -4,7 +4,7 @@
 
 ---
 
-## 📝 Prerequisites
+## 📋 Prerequisites
 
 - A USB flash drive (8GB or larger)
 - Access to a working computer with internet

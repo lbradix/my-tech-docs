@@ -4,7 +4,7 @@
 
 ---
 
-## 📝 Prerequisites
+## 📋 Prerequisites
 
 - [Linux Mint](https://linuxmint.com/download.php) installed 
 - [GitHub](https://github.com/) account

@@ -5,7 +5,7 @@ Use this guide to join a Debian/Ubuntu-based Linux system (like KDE Neon, Mint o
 
 ---
 
-## 📝 Prerequisites
+## 📋 Prerequisites
 
 - Windows Server 2025 configured as Domain Controller
 - Domain name 
