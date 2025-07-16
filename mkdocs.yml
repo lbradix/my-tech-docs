@@ -6,6 +6,7 @@ theme:
   logo: assets/lb2c.png
   favicon: assets/lb2c.png
   features:
+    - navigation.top
     - navigation.footer
   extra_css:
   - assets/stylesheets/custom.css
@@ -26,6 +27,10 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+plugins:
+   - search
+   - awesome-nav
+      
 
 #Code to add emojis/icons
 markdown_extensions:

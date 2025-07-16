@@ -247,7 +247,7 @@ Fix:
 
 <br>
 
-[&uarr; Back to top](#joining-ubuntu-based-linux-devices-to-windows-server-2025-active-directory-winbind-method)
+
 
 
 

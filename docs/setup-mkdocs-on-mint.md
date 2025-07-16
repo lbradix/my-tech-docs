@@ -135,4 +135,3 @@ mkdocs gh-deploy
 
 <br>
 
-[&uarr; Back to top](#setting-up-mkdocs-with-material-theme-on-linux-mint)

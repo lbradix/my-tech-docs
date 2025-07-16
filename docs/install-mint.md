@@ -133,7 +133,7 @@ After installation:
 
 <br>
 
-[&uarr; Back to top](#installing-linux-mint-step-by-step-guide-for-beginners)
+
 
 
 

@@ -49,10 +49,8 @@ If your instance does not allow open registration, ask your admin for an invitat
     - Enable 2FA as soon as possible (we'll cover this in the [User Settings](user-settings.md) section).
     - Install the [browser extension](browser-extension.md) for autofill features.
 
----
-
 <br>
 
-[&uarr; Back to top](#getting-started-with-vaultwarden)  
+ 
 
-[← Back to Overview](index.md) • [→ Managing Your Vault](managing-vault.md)
+

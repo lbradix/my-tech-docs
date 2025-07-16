@@ -65,10 +65,6 @@ Use the search bar at the top left to quickly find items by name, username, or U
     
     You can delete it afterward!
 
----
-
 <br>
 
-[&uarr; Back to top](#getting-started-with-vaultwarden) 
 
-[← Back to Getting Started](getting-started.md) • [→ Browser Extension](browser-extension.md)

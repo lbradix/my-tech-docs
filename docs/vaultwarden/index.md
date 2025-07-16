@@ -24,6 +24,6 @@ This guide is intended for end users of Vaultwarden — not system administrator
 
 If you’re looking to install or configure Vaultwarden, check the [official GitHub repository](https://github.com/dani-garcia/vaultwarden).
 
----
+<br>
 
-[&rarr; Get Started](getting-started.md)
+

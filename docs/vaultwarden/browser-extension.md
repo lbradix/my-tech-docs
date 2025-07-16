@@ -75,10 +75,8 @@ Now you can:
     1. Log out of the extension
     2. Clear browser data (or use Incognito Mode)
 
----
-
 <br>
 
-[&uarr; Back to top](#using-the-vaultwarden-browser-extension)
 
-[← Back to Managing Vault](managing-vault.md) • [→ User Settings](user-settings.md)
+
+
