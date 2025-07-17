@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="assets/lb2c.png" alt="Docs by LB Logo" width="200" style="box-shadow: 0 2px 8px rgba(0,0,0,0.3); border-radius: 8px;">
+
+</p>
+
 # Welcome
 
 Hello! I'm LeValle Bradix and welcome to my technical writing portfolio! I'm excited to share the work I've created while learning and growing as a technical author. My MkDocs site  features clear, approachable documentation projects, tutorials, and hands-on guides for various complex tools and technologies.
