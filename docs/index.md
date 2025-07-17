@@ -25,7 +25,7 @@ Thanks for visiting!
 
 ---
 
-## Get in Touch
+## Get in Touch!
 
 Feel free to reach out or connect with me for collaboration opportunities.
 

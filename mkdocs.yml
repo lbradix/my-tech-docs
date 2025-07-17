@@ -1,6 +1,7 @@
 site_name: Docs by LB
 theme:
   name: material
+  custom_dir: overrides
   font: 
     text: Space Grotesk
   logo: assets/lb2c.png

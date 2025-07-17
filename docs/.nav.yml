@@ -13,3 +13,5 @@ nav:
     - Sharing Items: vaultwarden/sharing-items.md
     - Best Practices: vaultwarden/best-practices.md
     - FAQ: vaultwarden/faq.md
+  - Troubleshooting Guides:
+    - Full Disk on Linux Server: troubleshooting-full-disk1.md
