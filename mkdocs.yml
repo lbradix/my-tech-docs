@@ -1,4 +1,6 @@
 site_name: Docs by LB
+site_url: https://docs.bradix.org
+use_directory_urls: true
 theme:
   name: material
   custom_dir: overrides
