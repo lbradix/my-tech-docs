@@ -11,6 +11,9 @@ theme:
   features:
     - navigation.top
     - navigation.footer
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - content.tabs.link
   extra_css:
   - assets/stylesheets/custom.css
 
@@ -52,9 +55,11 @@ markdown_extensions:
   - pymdownx.superfences
   
   #Content tabs : use === to make new tabs
+
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.snippets
   
   - pymdownx.mark:
 

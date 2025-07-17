@@ -1,17 +1,18 @@
 nav:
   - Home: index.md
-  - Guides:
+  - Product Guides:
+    - Vaultwarden:
+      - Overview: vaultwarden/index.md
+      - Getting Started: vaultwarden/getting-started.md
+      - Managing Vault: vaultwarden/managing-vault.md
+      - Browser Extension: vaultwarden/browser-extension.md
+      - User Settings: vaultwarden/user-settings.md
+      - Sharing Items: vaultwarden/sharing-items.md
+      - Best Practices: vaultwarden/best-practices.md
+      - FAQ: vaultwarden/faq.md
+  - How-To Guides:
     - Installing Linux Mint: install-mint.md
     - Joining Linux to AD: join-linux-to-windows-2025-ad.md
     - Setting Up Mkdocs: setup-mkdocs-on-mint.md
-  - Vaultwarden:
-    - Overview: vaultwarden/index.md
-    - Getting Started: vaultwarden/getting-started.md
-    - Managing Vault: vaultwarden/managing-vault.md
-    - Browser Extension: vaultwarden/browser-extension.md
-    - User Settings: vaultwarden/user-settings.md
-    - Sharing Items: vaultwarden/sharing-items.md
-    - Best Practices: vaultwarden/best-practices.md
-    - FAQ: vaultwarden/faq.md
   - Troubleshooting Guides:
-    - Full Disk on Linux Server: troubleshooting-full-disk1.md
+    - Full Disk on Linux Server: troubleshooting-full-disk.md

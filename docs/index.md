@@ -14,14 +14,20 @@ I transitioned into technical writing from a background in IT and system adminis
 
 ## Start Exploring
 
-Check out:  
-- [Installing Linux Mint (Step-by-Step Guide for Beginners)](install-mint.md)  
-- [Setting Up MkDocs with Material Theme on Linux Mint](setup-mkdocs-on-mint.md)  
-- [Joining Ubuntu-Based Linux Devices to Windows Server 2025 Active Directory (Winbind Method)](join-linux-to-windows-2025-ad.md)  
-- [Vaultwarden User Guide](vaultwarden/index.md)  
-- [More coming soon...]
+> Browse my growing collection of tutorials and documentation samples by category:
 
-Thanks for visiting!
+=== "Product Guides"
+    - [Vaultwarden User Guide](vaultwarden/index.md)
+    - _More coming_...
+
+=== "How-To Guides"
+    - [Installing Linux Mint (Step-by-Step Guide for Beginners)](install-mint.md)
+    - [Setting Up MkDocs with Material Theme on Linux Mint](setup-mkdocs-on-mint.md)
+    - [Joining Ubuntu-Based Linux Devices to Windows Server 2025 Active Directory (Winbind Method)](join-linux-to-windows-2025-ad.md)
+
+=== "Troubleshooting Guides"
+    - [Full Disk on Linux Server](troubleshooting-full-disk.md)
+    - _More coming_...
 
 ---
 
@@ -29,6 +35,6 @@ Thanks for visiting!
 
 Feel free to reach out or connect with me for collaboration opportunities.
 
-- email : lnbradix@gmail.com  
-- cell : 470-418-7123
+📨 : lnbradix@gmail.com  
+📱 : 470-418-7123
 
