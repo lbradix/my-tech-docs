@@ -1,14 +1,13 @@
-/* Vertical bar between nav and content */
-.md-sidebar {
-  border-right: 1px solid #999;
+/* Hover effect for top navigation tab links */
+.md-tabs__link:hover {
+  color: #ff9800;               /* Bright orange text */
+  text-shadow: 0 0 6px #ff9800; /* Glow effect */
+  transition: all 0.2s ease-in-out;
 }
 
-/* Vertical bar between content and table of contents */
-.md-content {
-  border-right: 1px solid #999;
-}
-
-/* Optional: table of contents sidebar */
-.md-sidebar--secondary {
-  border-left: 1px solid #999;
+/* Hover effect for all regular links */
+a:hover {
+  color: #ff9800 !important;
+  text-decoration: underline;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
 }
