@@ -890,6 +890,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#when-to-escalate-or-reboot" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Escalate or Reboot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-fix-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Fix Checklist
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -972,6 +990,24 @@
   <a href="#preventive-measures" class="md-nav__link">
     <span class="md-ellipsis">
       Preventive Measures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-escalate-or-reboot" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Escalate or Reboot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-fix-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Fix Checklist
     </span>
   </a>
   
@@ -1065,6 +1101,48 @@ Author: LeValle Bradix</p>
 </ul>
 <hr />
 <h2 id="preventive-measures">Preventive Measures</h2>
+<ul>
+<li>
+<p>Enable log rotation:<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/logrotate.conf<span class="w">  </span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Schedule a monthly disk usage audit via cron:<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>crontab<span class="w"> </span>-e
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1"># Add:</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="m">0</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>df<span class="w"> </span>-h<span class="w"> </span><span class="p">|</span><span class="w"> </span>mail<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;Monthly Disk Report&quot;</span><span class="w"> </span>your@email.com
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Monitor disk usage with tools like:  </p>
+<ul>
+<li><code>ncdu</code>  </li>
+<li><code>glances</code>  </li>
+<li><code>netdata</code> or <code>grafana</code>  </li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="when-to-escalate-or-reboot">When to Escalate or Reboot</h2>
+<ul>
+<li>Root (<code>/</code>) partition is full and blocking critical services  </li>
+<li>You can't delete anything safely  </li>
+<li>Disk hardware is failing (use <code>smartctl</code>, <code>dmesg</code>)  </li>
+</ul>
+<hr />
+<h2 id="quick-fix-checklist">Quick Fix Checklist</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>df -h</code> run, issue confirmed  </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Large folders identified via <code>du -sh</code>  </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Logs or cache cleaned  </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Root cause documented  </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Prevention in place  </li>
+</ul>
+<hr />
+<div class="admonition tip">
+<p class="admonition-title"><strong>Pro Tip</strong>: Keep <code>/var/log</code>, <code>/tmp</code>, and <code>/home</code> on separate partitions when possible to isolate failures.</p>
+</div>
 
 
 
