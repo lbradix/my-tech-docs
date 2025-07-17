@@ -673,35 +673,103 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <article class="md-content__inner md-typeset">
-    <div style="text-align: center; margin-top: 4rem; padding: 2rem;">
-      <img src="/assets/lb2c.png" alt="LB Logo" style="width: 100px; opacity: 0.85; margin-bottom: 1rem;">
-      <h1 style="font-size: 3rem; color: #673ab7;">Oops! Page Not Found</h1>
-      <p style="font-size: 1.2rem; color: #555;">
-        You’ve wandered into uncharted documentation territory.
-      </p>
-      <p style="margin-top: 1.5rem;">
-        <a href="/" style="
-          background-color: #ff5722;
-          color: white;
-          padding: 0.75rem 1.5rem;
-          text-decoration: none;
-          border-radius: 8px;
-          font-weight: bold;
-          display: inline-block;
-          transition: background-color 0.3s ease;
-        "
-        onmouseover="this.style.backgroundColor='#e64a19'"
-        onmouseout="this.style.backgroundColor='#ff5722'"
-        >
-          🏠 Take Me Home
-        </a>
-      </p>
-      <p style="margin-top: 2rem; font-size: 0.9rem; color: #888;">
-        Docs by LB – where every page tells a story… just not this one (yet).
-      </p>
-    </div>
-  </article>
+<article class="md-content__inner md-typeset">
+  <div style="text-align: center; background: black; color: #00ffea; padding: 4rem 1rem; font-family: 'Courier New', monospace;">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+      .glitch {
+        font-family: 'Press Start 2P', monospace;
+        font-size: 2rem;
+        color: #f0f0f0;
+        position: relative;
+        display: inline-block;
+      }
+
+      .glitch::before,
+      .glitch::after {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        color: #f0f0f0;
+        clip: rect(0, 900px, 0, 0);
+      }
+
+      .glitch::before {
+        animation: glitchTop 2s infinite linear alternate-reverse;
+        color: #ff00c8;
+      }
+
+      .glitch::after {
+        animation: glitchBottom 2s infinite linear alternate-reverse;
+        color: #00fff7;
+      }
+
+      @keyframes glitchTop {
+        0% {
+          clip: rect(0, 9999px, 0, 0);
+        }
+        10% {
+          clip: rect(10px, 9999px, 60px, 0);
+        }
+        20% {
+          clip: rect(85px, 9999px, 140px, 0);
+        }
+        30% {
+          clip: rect(60px, 9999px, 120px, 0);
+        }
+        100% {
+          clip: rect(0, 9999px, 0, 0);
+        }
+      }
+
+      @keyframes glitchBottom {
+        0% {
+          clip: rect(0, 9999px, 0, 0);
+        }
+        10% {
+          clip: rect(130px, 9999px, 190px, 0);
+        }
+        20% {
+          clip: rect(50px, 9999px, 80px, 0);
+        }
+        30% {
+          clip: rect(95px, 9999px, 150px, 0);
+        }
+        100% {
+          clip: rect(0, 9999px, 0, 0);
+        }
+      }
+
+      .glitch-button {
+        display: inline-block;
+        margin-top: 2rem;
+        background: #00fff7;
+        color: black;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        font-family: 'Press Start 2P', monospace;
+        font-size: 0.75rem;
+        border: none;
+        border-radius: 4px;
+        box-shadow: 0 0 10px #00fff7;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .glitch-button:hover {
+        background: #ff00c8;
+        color: white;
+        box-shadow: 0 0 15px #ff00c8;
+      }
+    </style>
+
+    <div class="glitch" data-text="404 ERROR">404 ERROR</div>
+    <p style="margin-top: 2rem; font-size: 1rem; color: #ccc;">This page no longer exists… or never did.</p>
+    <a href="/" class="glitch-button">⬅ BACK TO SAFETY</a>
+    <p style="margin-top: 3rem; font-size: 0.75rem; color: #666;">Powered by Docs by LB — not responsible for digital anomalies.</p>
+  </div>
+</article>
 
               </article>
             </div>
