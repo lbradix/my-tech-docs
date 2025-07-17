@@ -6,10 +6,10 @@
 
 ## 📋 Prerequisites
 
-- A USB flash drive (8GB or larger)
-- Access to a working computer with internet
-- Basic familiarity with boot menus and BIOS/UEFI settings
-- Optional: Backup your existing data
+- [ ] A USB flash drive (8GB or larger)
+- [ ] Access to a working computer with internet
+- [ ] Basic familiarity with boot menus and BIOS/UEFI settings
+- [ ] Optional: Backup your existing data
 
 ---
 

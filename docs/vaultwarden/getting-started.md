@@ -8,8 +8,8 @@ Welcome! In this section, we’ll walk through how to access Vaultwarden, create
 
 Before you begin, make sure you have the following:
 
-- An invite email or registration link (provided by your admin)
-- A modern web browser (Firefox, Chrome, Edge, etc.)
+- [ ] An invite email or registration link (provided by your admin)
+- [ ] A modern web browser (Firefox, Chrome, Edge, etc.)
 
 ---
 

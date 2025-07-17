@@ -35,6 +35,6 @@ I transitioned into technical writing from a background in IT and system adminis
 
 Feel free to reach out or connect with me for collaboration opportunities.
 
-📨 : lnbradix@gmail.com  
+📨 : lnbradix [at] gmail [dot] com  
 📱 : 470-418-7123
 

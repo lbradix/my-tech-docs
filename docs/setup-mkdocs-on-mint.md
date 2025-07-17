@@ -6,11 +6,11 @@
 
 ## 📋 Prerequisites
 
-- [Linux Mint](https://linuxmint.com/download.php) installed 
-- [GitHub](https://github.com/) account
-- Terminal access
-- [Visual Studio Code](https://code.visualstudio.com/download) 
-- [Python](https://www.python.org/downloads/) 
+- [ ] [Linux Mint](https://linuxmint.com/download.php) installed 
+- [ ] [GitHub](https://github.com/) account
+- [ ] Terminal access
+- [ ] [Visual Studio Code](https://code.visualstudio.com/download) 
+- [ ] [Python](https://www.python.org/downloads/) 
 
 ---
 
