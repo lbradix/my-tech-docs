@@ -25,7 +25,10 @@ Thanks for visiting!
 
 ---
 
+## Get in Touch
+
 Feel free to reach out or connect with me for collaboration opportunities.
 
-email : lnbradix@gmail.com  
-cell : 470-418-7123
+- email : lnbradix@gmail.com  
+- cell : 470-418-7123
+
