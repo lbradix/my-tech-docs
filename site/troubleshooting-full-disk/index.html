@@ -18,7 +18,7 @@
     
     
       
-        <title>Troubleshooting full disk - Docs by LB</title>
+        <title>Troubleshooting Full Disk Issues on Linux Servers - Docs by LB</title>
       
     
     
@@ -69,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#troubleshooting-full-disk-issues-on-linux-servers" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -100,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Troubleshooting full disk
+              Troubleshooting Full Disk Issues on Linux Servers
             
           </span>
         </div>
@@ -664,6 +669,61 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#symptoms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Symptoms
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#immediate-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Immediate Checks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safe-cleanup-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safe Cleanup Actions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#root-cause-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Root Cause Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preventive-measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preventive Measures
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -679,9 +739,78 @@
 
 
 
-  <h1>Troubleshooting full disk</h1>
-
-
+<h1 id="troubleshooting-full-disk-issues-on-linux-servers">Troubleshooting Full Disk Issues on Linux Servers</h1>
+<blockquote>
+<p>Audience: System Administrators, Home Lab Users, DevOps<br />
+Last Updated: July 2025<br />
+Author: LeValle Bradix</p>
+</blockquote>
+<hr />
+<h2 id="symptoms">Symptoms</h2>
+<p>You may encounter one or more of the following:</p>
+<ul>
+<li><code>No space left on device</code> errors</li>
+<li>Failed systemd services or application crashes</li>
+<li>Inability to write files or restart processes</li>
+<li>Cron jobs or backup tasks failing</li>
+<li>System becomes unresponsive or fails to boot</li>
+</ul>
+<hr />
+<h2 id="immediate-checks">Immediate Checks</h2>
+<ol>
+<li>
+<p><strong>Check overall disk usage:</strong>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>df<span class="w"> </span>-h
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Find large directories:</strong>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>du<span class="w"> </span>-sh<span class="w"> </span>/*<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-h
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Check inside <code>/var</code> (commonly problematic):</strong>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>du<span class="w"> </span>-sh<span class="w"> </span>/var/*<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-h
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Look for large log files:</strong>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>find<span class="w"> </span>/var/log<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-size<span class="w"> </span>+50M
+</span></code></pre></div></p>
+</li>
+</ol>
+<hr />
+<h2 id="safe-cleanup-actions">Safe Cleanup Actions</h2>
+<blockquote>
+<p>Always verify before deleting. Use <code>ls -lh</code> to inspect.  </p>
+</blockquote>
+<p><strong>Rotate or delete logs:</strong><br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>--vacuum-size<span class="o">=</span>100M
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>sudo<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>/var/log/*.gz<span class="w"> </span>/var/log/*.<span class="o">[</span><span class="m">0</span>-9<span class="o">]</span>
+</span></code></pre></div></p>
+<p><strong>Clean apt/yum cache:</strong>  </p>
+<ul>
+<li>Debian/Ubuntu:<br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>clean
+</span></code></pre></div></li>
+<li>RHEL/Fedora:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>clean<span class="w"> </span>all
+</span></code></pre></div></li>
+</ul>
+<p><strong>Clear thumbnail or temp files (desktop systems):</strong><br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>rm<span class="w"> </span>-rf<span class="w"> </span>~/.cache/thumbnails/*
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/tmp/*
+</span></code></pre></div></p>
+<hr />
+<h2 id="root-cause-analysis">Root Cause Analysis</h2>
+<ul>
+<li>Did a service generate excessive logs? (<code>/var/log/syslog</code>, <code>journald</code>)  </li>
+<li>Did backups or cron jobs write to the wrong location?  </li>
+<li>Are containers, VMs, or snapshots eating space?  </li>
+<li>Was logrotate or a cleanup script misconfigured?  </li>
+</ul>
+<hr />
+<h2 id="preventive-measures">Preventive Measures</h2>
 
 
 
