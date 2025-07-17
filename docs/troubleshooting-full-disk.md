@@ -82,3 +82,46 @@ sudo rm -rf /tmp/*
 
 ## Preventive Measures  
 
+- Enable log rotation:  
+```bash  
+sudo nano /etc/logrotate.conf  
+``` 
+
+- Schedule a monthly disk usage audit via cron:  
+```bash  
+crontab -e
+# Add:
+0 7 1 * * df -h | mail -s "Monthly Disk Report" your@email.com
+```  
+
+- Monitor disk usage with tools like:  
+
+    - `ncdu`  
+    - `glances`  
+    - `netdata` or `grafana`  
+
+---
+
+## When to Escalate or Reboot  
+
+- Root (`/`) partition is full and blocking critical services  
+- You can't delete anything safely  
+- Disk hardware is failing (use `smartctl`, `dmesg`)  
+
+---
+
+## Quick Fix Checklist  
+
++ [ ] `df -h` run, issue confirmed  
++ [ ] Large folders identified via `du -sh`  
++ [ ] Logs or cache cleaned  
++ [ ] Root cause documented  
++ [ ] Prevention in place  
+
+---
+
+!!! tip "**Pro Tip**: Keep `/var/log`, `/tmp`, and `/home` on separate partitions when possible to isolate failures."
+
+
+ 
+

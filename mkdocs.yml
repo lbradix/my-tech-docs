@@ -55,18 +55,22 @@ markdown_extensions:
   - pymdownx.superfences
   
   #Content tabs : use === to make new tabs
-
-  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
-  - pymdownx.snippets
+
   
   - pymdownx.mark:
 
   #Adding admonition
   - admonition
   - pymdownx.details
-  - pymdownx.superfences   
+
+  #Checkbox list
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+ 
 
 copyright: Copyright &copy; 2025 LeValle Bradix
 
