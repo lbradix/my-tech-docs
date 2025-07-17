@@ -1,6 +1,6 @@
 # Welcome
 
-Hello! I'm LeValle Bradix and welcome to my technical writing portfolio! I'm excited to share the work I've created while learning and growing as a technical author. My mkdocs site showcases easily digestible documentation projects, tutorials, and hands-on guides for various complex tools and technologies.
+Hello! I'm LeValle Bradix and welcome to my technical writing portfolio! I'm excited to share the work I've created while learning and growing as a technical author. My MkDocs site  features clear, approachable documentation projects, tutorials, and hands-on guides for various complex tools and technologies.
 
 ## What You'll Find Here
 
